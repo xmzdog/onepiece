@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.onepiece.xmz</groupId>
+    <artifactId>onepiece</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>onepiece</name>
+    <description>onepiece</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>openai-code-review-sdk</module>
+        <module>onepiece-api</module>
+        <module>onepiece-app</module>
+        <module>onepiece-domain</module>
+        <module>onepiece-infrastructure</module>
+        <module>onepiece-trigger</module>
+        <module>onepiece-types</module>
+    </modules>
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.6.13</spring-boot.version>
+        <spring-boot-starter-test>2.7.18</spring-boot-starter-test>
+        <com.alibaba.fastjson2>2.0.49</com.alibaba.fastjson2>
+        <com.baomidou>3.5.11</com.baomidou>
+        <com.github.xiaoymin>3.0.3</com.github.xiaoymin>
+        <org.apache.commons>3.12.0</org.apache.commons>
+        <mysql-connector-java>8.0.32</mysql-connector-java>
+        <lombok>1.18.34</lombok>
+        <com.thoughtworks.xstream>1.4.18</com.thoughtworks.xstream>
+        <dom4j>1.6.1</dom4j>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${com.alibaba.fastjson2}</version> <!-- 建议使用最新稳定版 -->
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${com.baomidou}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${org.apache.commons}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <!--            swagger增强API Knife4jConfig-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${com.github.xiaoymin}</version> <!-- 使用最新版本 -->
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok}</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-starter-test}</version>
+                <scope>test</scope>
+            </dependency>
+<!--            XML 序列化/反序列化库的注解类，用于把 Java 对象和 XML 映射。-->
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>${com.thoughtworks.xstream}</version>
+            </dependency>
+<!--            经典且高性能的 XML 操作框架，被广泛用于处理 XML 文档的读取、创建、修改、XPath 查询等功能。-->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j}</version>
+            </dependency>
+<!--            Retrofit 的核心库，提供声明式接口（Java 注解）的网络请求能力。-->
+<!--            1.自动处理 URL 拼接、请求发起、响应封装 2.可配合各种转换器使用，如 JSON、XML、ProtoBuf    3.支持通过接口定义 HTTP 请求-->
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>retrofit</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+<!--            响应体转换器-->
+<!--            把 Retrofit 返回的 JSON 数据自动转换为 Java 对象，使用 Jackson 作为序列化/反序列化工具-->
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>converter-jackson</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+<!--            让 Retrofit 支持 RxJava 2 的响应式编程模型   1.把返回类型从 Call<T> 改为 Observable<T> 或 Flowable<T>
+                   2.支持链式操作、线程切换、流式编排等响应式操作-->
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>adapter-rxjava2</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+            <!--        缓存服务-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>32.1.3-jre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.32</version> <!-- 可以根据需要选择版本 -->
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>com.xmz.aidog.AiDogApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
