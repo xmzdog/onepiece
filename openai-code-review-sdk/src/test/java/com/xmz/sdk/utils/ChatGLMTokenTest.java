@@ -24,7 +24,7 @@ import java.nio.charset.StandardCharsets;
 public class ChatGLMTokenTest {
 
     public static void main(String[] args) {
-        String apiKeySecret = "3e170b0c86004a7bbc93d456cfb2d645.7OzCVMrF8yBgRjyG";
+        String apiKeySecret = "3e1qazxdfdfas5.7OzCVMrF8yBgRjyG";
         String token = ChatGLMToken.getToken(apiKeySecret);
         String aa = "测试微信公众号模板";
         System.out.println(token);
