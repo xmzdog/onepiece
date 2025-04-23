@@ -1,4 +1,4 @@
-package com.onepiece.xmz.dao;
+package com.onepiece.xmz.types.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 

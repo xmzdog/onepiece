@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.onepiece.xmz.dao.IGroupBuyDiscountDao">
+<mapper namespace="com.onepiece.xmz.types.dao.IGroupBuyDiscountDao">
 
-    <resultMap id="dataMap" type="com.onepiece.xmz.dao.po.GroupBuyDiscount">
+    <resultMap id="dataMap" type="com.onepiece.xmz.types.dao.po.GroupBuyDiscount">
         <id column="id" property="id"/>
         <result column="discount_id" property="discountId"/>
         <result column="discount_name" property="discountName"/>

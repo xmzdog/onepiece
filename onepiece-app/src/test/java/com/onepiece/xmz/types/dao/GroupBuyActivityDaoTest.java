@@ -1,15 +1,12 @@
-package com.onepiece.xmz.dao;
+package com.onepiece.xmz.types.dao;
 
-import com.onepiece.xmz.Application;
-import com.onepiece.xmz.dao.IGroupBuyActivityDao;
-import com.onepiece.xmz.dao.po.GroupBuyActivity;
+import com.onepiece.xmz.types.Application;
+import com.onepiece.xmz.types.dao.po.GroupBuyActivity;
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONArray;
 //import org.junit.jupiter.api.Test;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 

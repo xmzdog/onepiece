@@ -1,4 +1,4 @@
-package com.onepiece.xmz.dao.po;
+package com.onepiece.xmz.types.dao.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

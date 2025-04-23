@@ -1,6 +1,6 @@
-package com.onepiece.xmz.dao;
+package com.onepiece.xmz.types.dao;
 
-import com.onepiece.xmz.dao.po.GroupBuyActivity;
+import com.onepiece.xmz.types.dao.po.GroupBuyActivity;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

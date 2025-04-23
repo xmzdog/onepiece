@@ -144,7 +144,11 @@
                 <groupId>com.onepiece.xmz</groupId>
                 <artifactId>onepiece-infrastructure</artifactId>
                 <version>${onepiece.model}</version>
-            </dependency>
+            </dependency><dependency>
+            <groupId>com.onepiece.xmz</groupId>
+            <artifactId>onepiece-types</artifactId>
+            <version>${onepiece.model}</version>
+        </dependency>
 
             <dependency>
                 <groupId>junit</groupId>
