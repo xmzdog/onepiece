@@ -1,0 +1,5 @@
+spring:
+  config:
+    name: onepiece-app
+  profiles:
+    active: dev
