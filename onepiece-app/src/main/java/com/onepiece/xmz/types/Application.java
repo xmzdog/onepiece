@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @Configurable
-@MapperScan("com.onepiece.xmz.dao")
+@MapperScan("com.onepiece.xmz.types.dao")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

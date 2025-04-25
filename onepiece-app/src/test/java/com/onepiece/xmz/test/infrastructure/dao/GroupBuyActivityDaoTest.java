@@ -1,6 +1,7 @@
-package com.onepiece.xmz.types.dao;
+package com.onepiece.xmz.test.infrastructure.dao;
 
 import com.onepiece.xmz.types.Application;
+import com.onepiece.xmz.types.dao.IGroupBuyActivityDao;
 import com.onepiece.xmz.types.dao.po.GroupBuyActivity;
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONArray;

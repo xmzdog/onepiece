@@ -1,73 +1,123 @@
-25-04-23.17:35:50.623 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 23208 (D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes started by Administrator in D:\xmz\onepiece-backend\onepiece)
-25-04-23.17:35:50.629 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-04-23.17:35:52.166 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8181 (http)
-25-04-23.17:35:52.181 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8181"]
-25-04-23.17:35:52.182 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-04-23.17:35:52.182 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.68]
-25-04-23.17:35:52.391 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-04-23.17:35:52.391 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1678 ms
-25-04-23.17:35:52.825 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: com.mysql.cj.jdbc.Driver
-25-04-23.17:35:52.829 [main            ] INFO  StandardService        - Stopping service [Tomcat]
-25-04-23.17:35:52.846 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+25-04-25.00:44:19.238 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 12380 (D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes started by Administrator in D:\xmz\onepiece-backend\onepiece)
+25-04-25.00:44:19.242 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-04-25.00:44:20.538 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8181 (http)
+25-04-25.00:44:20.552 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8181"]
+25-04-25.00:44:20.553 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-04-25.00:44:20.553 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.68]
+25-04-25.00:44:20.731 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-04-25.00:44:20.731 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1425 ms
+25-04-25.00:44:20.813 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'indexGroupBuyMarketServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityStrategyFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-domain\target\classes\com\onepiece\xmz\types\domain\activity\service\trial\factory\DefaultActivityStrategyFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rootNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+25-04-25.00:44:20.817 [main            ] INFO  StandardService        - Stopping service [Tomcat]
+25-04-25.00:44:20.831 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-25-04-23.17:35:52.886 [main            ] ERROR SpringApplication      - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: com.mysql.cj.jdbc.Driver
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:745)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:420)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
-	at com.onepiece.xmz.types.Application.main(Application.java:18)
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: com.mysql.cj.jdbc.Driver
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
-	... 19 common frames omitted
-Caused by: java.lang.IllegalStateException: Cannot load driver class: com.mysql.cj.jdbc.Driver
-	at org.springframework.util.Assert.state(Assert.java:97)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:241)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.initializeDataSourceBuilder(DataSourceProperties.java:193)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:48)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:90)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	... 20 common frames omitted
-25-04-23.17:36:56.095 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 22380 (D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes started by Administrator in D:\xmz\onepiece-backend\onepiece)
-25-04-23.17:36:56.098 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-04-23.17:36:57.341 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8181 (http)
-25-04-23.17:36:57.352 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8181"]
-25-04-23.17:36:57.353 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-04-23.17:36:57.353 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.68]
-25-04-23.17:36:57.532 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-04-23.17:36:57.533 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1370 ms
-25-04-23.17:36:58.490 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8181"]
-25-04-23.17:36:58.533 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8181 (http) with context path ''
-25-04-23.17:36:58.546 [main            ] INFO  Application            - Started Application in 3.361 seconds (JVM running for 4.686)
-25-04-23.21:54:33.460 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 25916 (D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes started by Administrator in D:\xmz\onepiece-backend\onepiece)
-25-04-23.21:54:33.463 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-04-23.21:54:34.751 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8181 (http)
-25-04-23.21:54:34.766 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8181"]
-25-04-23.21:54:34.767 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-04-23.21:54:34.767 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.68]
-25-04-23.21:54:34.975 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-04-23.21:54:34.976 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1453 ms
-25-04-23.21:54:35.920 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8181"]
-25-04-23.21:54:35.959 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8181 (http) with context path ''
-25-04-23.21:54:35.970 [main            ] INFO  Application            - Started Application in 3.441 seconds (JVM running for 4.606)
+25-04-25.00:44:20.865 [main            ] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.onepiece.xmz.types.domain.activity.service.trial.factory.DefaultActivityStrategyFactory required a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' in your configuration.
+
+25-04-25.00:50:02.996 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 26180 (D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes started by Administrator in D:\xmz\onepiece-backend\onepiece)
+25-04-25.00:50:02.999 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-04-25.00:50:04.183 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8181 (http)
+25-04-25.00:50:04.196 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8181"]
+25-04-25.00:50:04.197 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-04-25.00:50:04.197 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.68]
+25-04-25.00:50:04.360 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-04-25.00:50:04.360 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1311 ms
+25-04-25.00:50:04.435 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'indexGroupBuyMarketServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityStrategyFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-domain\target\classes\com\onepiece\xmz\types\domain\activity\service\trial\factory\DefaultActivityStrategyFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rootNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+25-04-25.00:50:04.438 [main            ] INFO  StandardService        - Stopping service [Tomcat]
+25-04-25.00:50:04.455 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+25-04-25.00:50:04.490 [main            ] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.onepiece.xmz.types.domain.activity.service.trial.factory.DefaultActivityStrategyFactory required a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' in your configuration.
+
+25-04-25.00:55:48.124 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 21008 (D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes started by Administrator in D:\xmz\onepiece-backend\onepiece)
+25-04-25.00:55:48.127 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-04-25.00:55:49.412 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8181 (http)
+25-04-25.00:55:49.427 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8181"]
+25-04-25.00:55:49.427 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-04-25.00:55:49.427 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.68]
+25-04-25.00:55:49.599 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-04-25.00:55:49.600 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1423 ms
+25-04-25.00:55:49.685 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'indexGroupBuyMarketServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityStrategyFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-domain\target\classes\com\onepiece\xmz\types\domain\activity\service\trial\factory\DefaultActivityStrategyFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rootNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+25-04-25.00:55:49.688 [main            ] INFO  StandardService        - Stopping service [Tomcat]
+25-04-25.00:55:49.704 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+25-04-25.00:55:49.740 [main            ] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.onepiece.xmz.types.domain.activity.service.trial.factory.DefaultActivityStrategyFactory required a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' in your configuration.
+
+25-04-25.01:02:49.286 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 6384 (D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes started by Administrator in D:\xmz\onepiece-backend\onepiece)
+25-04-25.01:02:49.289 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-04-25.01:02:50.505 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8181 (http)
+25-04-25.01:02:50.518 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8181"]
+25-04-25.01:02:50.518 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-04-25.01:02:50.519 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.68]
+25-04-25.01:02:50.687 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-04-25.01:02:50.688 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1348 ms
+25-04-25.01:02:50.758 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'indexGroupBuyMarketServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityStrategyFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-domain\target\classes\com\onepiece\xmz\types\domain\activity\service\trial\factory\DefaultActivityStrategyFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rootNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+25-04-25.01:02:50.761 [main            ] INFO  StandardService        - Stopping service [Tomcat]
+25-04-25.01:02:50.777 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+25-04-25.01:02:50.806 [main            ] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.onepiece.xmz.types.domain.activity.service.trial.factory.DefaultActivityStrategyFactory required a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' in your configuration.
+
+25-04-25.01:06:22.208 [main            ] INFO  Application            - Starting Application using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 20256 (D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes started by Administrator in D:\xmz\onepiece-backend\onepiece)
+25-04-25.01:06:22.210 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-04-25.01:06:23.411 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8181 (http)
+25-04-25.01:06:23.423 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8181"]
+25-04-25.01:06:23.424 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-04-25.01:06:23.424 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.68]
+25-04-25.01:06:23.586 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-04-25.01:06:23.586 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1326 ms
+25-04-25.01:06:24.620 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8181"]
+25-04-25.01:06:24.659 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8181 (http) with context path ''
+25-04-25.01:06:24.674 [main            ] INFO  Application            - Started Application in 3.273 seconds (JVM running for 4.165)

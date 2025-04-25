@@ -3,12 +3,16 @@ package com.onepiece.xmz.types.domain.activity.service.trial.factory;
 import com.onepiece.xmz.types.design.framework.tree.StrategyHandler;
 import com.onepiece.xmz.types.domain.activity.model.entity.MarketProductEntity;
 import com.onepiece.xmz.types.domain.activity.model.entity.TrialBalanceEntity;
+import com.onepiece.xmz.types.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
+import com.onepiece.xmz.types.domain.activity.model.valobj.SkuVO;
 import com.onepiece.xmz.types.domain.activity.service.trial.node.RootNode;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,6 +23,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DefaultActivityStrategyFactory {
+
 
     private final RootNode rootNode;
 
@@ -35,6 +40,10 @@ public class DefaultActivityStrategyFactory {
     @AllArgsConstructor
     @NoArgsConstructor
     public static class DynamicContext {
+        // 拼团活动营销配置值对象
+        private GroupBuyActivityDiscountVO groupBuyActivityDiscountVO;
+        // 商品信息
+        private SkuVO skuVO;
 
     }
 
