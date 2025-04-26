@@ -24,6 +24,20 @@ server:
       min-spare: 10
     accept-count: 10
 
+# Redis
+redis:
+  sdk:
+    config:
+      host: 47.117.163.255
+      port: 16379
+      pool-size: 10
+      min-idle-size: 5
+      idle-timeout: 30000
+      connect-timeout: 5000
+      retry-attempts: 3
+      retry-interval: 1000
+      ping-interval: 60000
+      keep-alive: true
 
 # 日志
 logging:

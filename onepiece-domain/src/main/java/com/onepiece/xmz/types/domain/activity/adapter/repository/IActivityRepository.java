@@ -18,12 +18,12 @@ import java.util.List;
 public interface IActivityRepository {
 
 
-    //    GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(Long activityId);
-    GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(String source, String channel);
+    GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(Long activityId);
+//    GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(String source, String channel);
 
     SkuVO querySkuByGoodsId(String goodsId);
 
-//    SCSkuActivityVO querySCSkuActivityBySCGoodsId(String source, String channel, String goodsId);
+    SCSkuActivityVO querySCSkuActivityBySCGoodsId(String source, String channel, String goodsId);
 //
 //    boolean isTagCrowdRange(String tagId, String userId);
 //
