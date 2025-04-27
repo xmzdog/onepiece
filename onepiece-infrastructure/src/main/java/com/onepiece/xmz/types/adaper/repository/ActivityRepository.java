@@ -14,6 +14,8 @@ import com.onepiece.xmz.types.domain.activity.model.valobj.DiscountTypeEnum;
 import com.onepiece.xmz.types.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import com.onepiece.xmz.types.domain.activity.model.valobj.SCSkuActivityVO;
 import com.onepiece.xmz.types.domain.activity.model.valobj.SkuVO;
+import com.onepiece.xmz.types.redis.IRedisService;
+import org.redisson.api.RBitSet;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -33,6 +35,9 @@ public class ActivityRepository implements IActivityRepository {
 
     @Resource
     private ISkuDao skuDao;
+
+    @Resource
+    private IRedisService redisService;
 
     @Override
     public GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(Long activityId) {
@@ -93,5 +98,12 @@ public class ActivityRepository implements IActivityRepository {
                 .chanel(scSkuActivityVO.getChannel())
                 .activityId(scSkuActivity.getActivityId())
                 .source(scSkuActivity.getSource()).build();
+    }
+
+    @Override
+    public boolean isTagCrowdRange(String tagId, String userId) {
+        RBitSet bitSet = redisService.getBitSet(tagId);
+        if (!bitSet.isExists() ) return false;
+        return bitSet.get(redisService.getIndexFromUserId(userId));
     }
 }
