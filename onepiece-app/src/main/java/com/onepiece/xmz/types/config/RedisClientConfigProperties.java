@@ -1,4 +1,4 @@
-package com.onepiece.xmz.types.comfig;
+package com.onepiece.xmz.types.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,4 +1,4 @@
-package com.onepiece.xmz.types.comfig;
+package com.onepiece.xmz.types.config;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;

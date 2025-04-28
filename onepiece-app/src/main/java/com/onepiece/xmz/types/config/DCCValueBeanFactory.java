@@ -1,4 +1,4 @@
-package com.onepiece.xmz.types.comfig;
+package com.onepiece.xmz.types.config;
 
 import com.onepiece.xmz.types.annotations.DCCValue;
 import com.onepiece.xmz.types.common.Constants;
@@ -10,7 +10,6 @@ import org.redisson.api.RedissonClient;
 import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

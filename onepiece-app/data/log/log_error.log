@@ -1,1 +1,1 @@
-25-04-28.23:44:53.263 [pool-2-thread-1 ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-04-29.00:01:13.310 [pool-2-thread-1 ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.

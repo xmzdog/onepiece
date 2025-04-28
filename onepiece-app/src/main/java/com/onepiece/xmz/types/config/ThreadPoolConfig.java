@@ -1,4 +1,4 @@
-package com.onepiece.xmz.types.comfig;
+package com.onepiece.xmz.types.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;

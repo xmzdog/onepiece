@@ -1,42 +1,26 @@
-25-04-28.23:44:44.030 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 35260 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
-25-04-28.23:44:44.032 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
-25-04-28.23:44:45.541 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-04-28.23:44:45.546 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-04-28.23:44:45.603 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
-25-04-28.23:44:46.160 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.comfig.RedisClientConfig$$EnhancerBySpringCGLIB$$d4332604] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-04-28.23:44:46.726 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.comfig.RedisClientConfigProperties' of type [com.onepiece.xmz.types.comfig.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-04-28.23:44:47.234 [main            ] INFO  Version                - Redisson 3.26.0
-25-04-28.23:44:48.377 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
-25-04-28.23:44:48.485 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
-25-04-28.23:44:48.586 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-04-28.23:44:52.493 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-04-28.23:44:52.590 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 9.257 seconds (JVM running for 10.914)
-25-04-28.23:44:53.216 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-25-04-28.23:44:53.216 [main            ] INFO  SwitchRoot             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-25-04-28.23:44:53.263 [pool-2-thread-1 ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-25-04-28.23:44:53.263 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-04-28.23:44:54.073 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-04-28.23:44:54.180 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
-25-04-28.23:44:54.180 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-25-04-28.23:44:54.181 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算:0
-25-04-28.23:44:54.204 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-25-04-28.23:44:54.205 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-25-04-28.23:44:54.223 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":90.00,"endTime":"2024-12-07 10:19:40","goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":true,"isVisible":true,"originalPrice":100.00,"startTime":"2024-12-07 10:19:40","targetCount":1}
-25-04-28.23:44:54.243 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-04-28.23:44:54.287 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-04-28.23:58:38.742 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 22620 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
-25-04-28.23:58:38.743 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
-25-04-28.23:58:40.228 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-04-28.23:58:40.233 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-04-28.23:58:40.296 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
-25-04-28.23:58:40.851 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.comfig.RedisClientConfig$$EnhancerBySpringCGLIB$$faf11680] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-04-28.23:58:41.423 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.comfig.RedisClientConfigProperties' of type [com.onepiece.xmz.types.comfig.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-04-28.23:58:41.920 [main            ] INFO  Version                - Redisson 3.26.0
-25-04-28.23:58:43.190 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
-25-04-28.23:58:43.294 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
-25-04-28.23:58:43.368 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-04-28.23:58:46.955 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-04-28.23:58:47.035 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 8.978 seconds (JVM running for 10.349)
-25-04-28.23:58:47.613 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-25-04-28.23:58:47.613 [main            ] INFO  SwitchRoot             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-25-04-28.23:58:47.625 [main            ] INFO  SwitchRoot             - 拼团活动切量拦截 xiaofuge
+25-04-29.00:01:03.957 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 33684 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-04-29.00:01:03.958 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-04-29.00:01:05.662 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-04-29.00:01:05.667 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-04-29.00:01:05.724 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+25-04-29.00:01:06.233 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$17eb00d4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-04-29.00:01:06.712 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-04-29.00:01:07.229 [main            ] INFO  Version                - Redisson 3.26.0
+25-04-29.00:01:08.423 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-04-29.00:01:08.533 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-04-29.00:01:08.609 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-04-29.00:01:12.672 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-04-29.00:01:12.751 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 9.626 seconds (JVM running for 11.011)
+25-04-29.00:01:13.253 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-04-29.00:01:13.254 [main            ] INFO  SwitchRoot             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-04-29.00:01:13.310 [pool-2-thread-1 ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-04-29.00:01:13.310 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-04-29.00:01:14.066 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-04-29.00:01:14.178 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-04-29.00:01:14.179 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-04-29.00:01:14.179 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算:0
+25-04-29.00:01:14.203 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-04-29.00:01:14.205 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-04-29.00:01:14.221 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":90.00,"endTime":"2024-12-07 10:19:40","goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":true,"isVisible":true,"originalPrice":100.00,"startTime":"2024-12-07 10:19:40","targetCount":1}
+25-04-29.00:01:14.243 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-04-29.00:01:14.301 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
