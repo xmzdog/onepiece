@@ -27,9 +27,9 @@ public interface IActivityRepository {
 //
     boolean isTagCrowdRange(String tagId, String userId);
 //
-//    boolean downgradeSwitch();
+    boolean downgradeSwitch();
 //
-//    boolean cutRange(String userId);
+    boolean cutRange(String userId);
 //
 //    List<UserGroupBuyOrderDetailEntity> queryInProgressUserGroupBuyOrderDetailListByOwner(Long activityId, String userId, Integer ownerCount);
 //

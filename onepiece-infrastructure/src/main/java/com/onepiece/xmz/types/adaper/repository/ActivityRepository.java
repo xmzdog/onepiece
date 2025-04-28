@@ -9,6 +9,7 @@ import com.onepiece.xmz.types.dao.po.GroupBuyActivity;
 import com.onepiece.xmz.types.dao.po.GroupBuyDiscount;
 import com.onepiece.xmz.types.dao.po.SCSkuActivity;
 import com.onepiece.xmz.types.dao.po.Sku;
+import com.onepiece.xmz.types.dcc.DCCService;
 import com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository;
 import com.onepiece.xmz.types.domain.activity.model.valobj.DiscountTypeEnum;
 import com.onepiece.xmz.types.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
@@ -32,6 +33,9 @@ public class ActivityRepository implements IActivityRepository {
     private IGroupBuyDiscountDao groupBuyDiscountDao;
     @Resource
     private ISCSkuActivityDao iscSkuActivityDao;
+    @Resource
+    private DCCService dccService;
+
 
     @Resource
     private ISkuDao skuDao;
@@ -106,4 +110,15 @@ public class ActivityRepository implements IActivityRepository {
         if (!bitSet.isExists() ) return false;
         return bitSet.get(redisService.getIndexFromUserId(userId));
     }
+
+    @Override
+    public boolean downgradeSwitch() {
+        return dccService.isDowngradeSwitch();
+    }
+
+    @Override
+    public boolean cutRange(String userId) {
+        return dccService.isCutRange(userId);
+    }
+
 }

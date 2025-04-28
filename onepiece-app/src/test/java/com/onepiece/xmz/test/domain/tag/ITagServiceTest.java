@@ -1,7 +1,7 @@
 package com.onepiece.xmz.test.domain.tag;
 
 
-import com.onepiece.xmz.types.Application;
+import com.onepiece.xmz.Application;
 import com.onepiece.xmz.types.domain.tag.service.TagService;
 import com.onepiece.xmz.types.redis.IRedisService;
 import lombok.extern.slf4j.Slf4j;

@@ -1,13 +1,12 @@
 package com.onepiece.xmz.test.domain.activity;
 
 import com.alibaba.fastjson2.JSON;
-import com.onepiece.xmz.types.Application;
+import com.onepiece.xmz.Application;
 import com.onepiece.xmz.types.domain.activity.model.entity.MarketProductEntity;
 import com.onepiece.xmz.types.domain.activity.model.entity.TrialBalanceEntity;
 import com.onepiece.xmz.types.domain.activity.service.IIndexGroupBuyMarketService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.junit.internal.Classes;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;

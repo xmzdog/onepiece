@@ -1,5 +1,8 @@
-25-04-25.00:44:20.813 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'indexGroupBuyMarketServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityStrategyFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-domain\target\classes\com\onepiece\xmz\types\domain\activity\service\trial\factory\DefaultActivityStrategyFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rootNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-25-04-25.00:44:20.865 [main            ] ERROR LoggingFailureAnalysisReporter - 
+25-04-28.23:45:24.257 [RMI TCP Connection(3)-192.168.31.31] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-04-28.23:53:34.618 [RMI TCP Connection(2)-192.168.31.31] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-04-28.23:55:59.279 [RMI TCP Connection(3)-192.168.31.31] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-04-28.23:57:50.393 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8181 is already in use
+25-04-28.23:57:50.483 [main            ] ERROR LoggingFailureAnalysisReporter - 
 
 ***************************
 APPLICATION FAILED TO START
@@ -7,58 +10,9 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in com.onepiece.xmz.types.domain.activity.service.trial.factory.DefaultActivityStrategyFactory required a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' in your configuration.
-
-25-04-25.00:50:04.435 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'indexGroupBuyMarketServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityStrategyFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-domain\target\classes\com\onepiece\xmz\types\domain\activity\service\trial\factory\DefaultActivityStrategyFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rootNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-25-04-25.00:50:04.490 [main            ] ERROR LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.onepiece.xmz.types.domain.activity.service.trial.factory.DefaultActivityStrategyFactory required a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' that could not be found.
-
+Web server failed to start. Port 8181 was already in use.
 
 Action:
 
-Consider defining a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' in your configuration.
-
-25-04-25.00:55:49.685 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'indexGroupBuyMarketServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityStrategyFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-domain\target\classes\com\onepiece\xmz\types\domain\activity\service\trial\factory\DefaultActivityStrategyFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rootNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-25-04-25.00:55:49.740 [main            ] ERROR LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.onepiece.xmz.types.domain.activity.service.trial.factory.DefaultActivityStrategyFactory required a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' in your configuration.
-
-25-04-25.01:02:50.758 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'indexGroupBuyMarketServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityStrategyFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-domain\target\classes\com\onepiece\xmz\types\domain\activity\service\trial\factory\DefaultActivityStrategyFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rootNode': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-25-04-25.01:02:50.806 [main            ] ERROR LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.onepiece.xmz.types.domain.activity.service.trial.factory.DefaultActivityStrategyFactory required a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.onepiece.xmz.types.domain.activity.adapter.repository.IActivityRepository' in your configuration.
+Identify and stop the process that's listening on port 8181 or configure this application to listen on another port.
 
