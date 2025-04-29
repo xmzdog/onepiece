@@ -94,6 +94,8 @@ public class ActivityRepository implements IActivityRepository {
     @Override
     public SCSkuActivityVO querySCSkuActivityBySCGoodsId(String source, String channel, String goodsId) {
         SCSkuActivity scSkuActivityVO = SCSkuActivity.builder()
+                .source(source)
+                .channel(channel)
                 .goodsId(goodsId).build();
         SCSkuActivity scSkuActivity = iscSkuActivityDao.querySCSkuActivityBySCGoodsId(scSkuActivityVO);
         if (null == scSkuActivity) return null;

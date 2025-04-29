@@ -28,6 +28,6 @@ public interface IMarketTradeService {
      * @param requestDTO 结算商品信息
      * @return 结算结果信息
      */
-    Response<SettlementMarketPayOrderResponseDTO> settlementMarketPayOrder(SettlementMarketPayOrderRequestDTO requestDTO);
+//    Response<SettlementMarketPayOrderResponseDTO> settlementMarketPayOrder(SettlementMarketPayOrderRequestDTO requestDTO);
 
 }
