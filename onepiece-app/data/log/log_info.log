@@ -28,10 +28,10 @@
 25-05-03.00:21:46.501 [main            ] INFO  UserTakeLimitRuleFilter - 用户参与次数校验，已达可参与上限 activityId:100123
 25-05-03.00:21:46.506 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"085979345025","source":"s01","userId":"xiaofuge"}
 com.onepiece.xmz.types.exception.AppException: null
-	at com.onepiece.xmz.types.domain.trade.service.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:38)
-	at com.onepiece.xmz.types.domain.trade.service.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:20)
+	at com.onepiece.xmz.types.domain.trade.service.lock.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:38)
+	at com.onepiece.xmz.types.domain.trade.service.lock.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:20)
 	at com.onepiece.xmz.types.design.framework.link.model2.chain.BusinessLinkedList.apply(BusinessLinkedList.java:20)
-	at com.onepiece.xmz.types.domain.trade.service.TradeOrderService.lockMarketPayOrder(TradeOrderService.java:46)
+	at com.onepiece.xmz.types.domain.trade.service.lock.TradeOrderService.lockMarketPayOrder(TradeOrderService.java:46)
 	at com.onepiece.xmz.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:106)
 	at com.onepiece.xmz.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:42)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -132,10 +132,10 @@ com.onepiece.xmz.types.exception.AppException: null
 25-05-03.00:28:34.527 [main            ] INFO  UserTakeLimitRuleFilter - 用户参与次数校验，已达可参与上限 activityId:100123
 25-05-03.00:28:34.532 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"402776714775","source":"s01","teamId":"79188884","userId":"xfg01"}
 com.onepiece.xmz.types.exception.AppException: null
-	at com.onepiece.xmz.types.domain.trade.service.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:38)
-	at com.onepiece.xmz.types.domain.trade.service.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:20)
+	at com.onepiece.xmz.types.domain.trade.service.lock.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:38)
+	at com.onepiece.xmz.types.domain.trade.service.lock.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:20)
 	at com.onepiece.xmz.types.design.framework.link.model2.chain.BusinessLinkedList.apply(BusinessLinkedList.java:20)
-	at com.onepiece.xmz.types.domain.trade.service.TradeOrderService.lockMarketPayOrder(TradeOrderService.java:46)
+	at com.onepiece.xmz.types.domain.trade.service.lock.TradeOrderService.lockMarketPayOrder(TradeOrderService.java:46)
 	at com.onepiece.xmz.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:106)
 	at com.onepiece.xmz.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder_teamId_not_null(MarketTradeControllerTest.java:58)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -206,3 +206,663 @@ com.onepiece.xmz.types.exception.AppException: null
 25-05-03.00:29:35.095 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"297581200264","source":"s01","teamId":"79188884","userId":"xfg02"} res:{"code":"0000","data":{"deductionPrice":10.00,"orderId":"506158307987","tradeOrderStatus":0},"info":"成功"}
 25-05-03.00:29:35.127 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 25-05-03.00:29:35.269 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:19:18.186 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 11012 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:19:18.191 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-05-05.18:19:21.367 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:19:21.377 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:19:21.521 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 0 Redis repository interfaces.
+25-05-05.18:19:22.645 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:19:23.606 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:19:24.497 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:19:30.488 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'DCCValueBeanFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes\com\onepiece\xmz\types\config\DCCValueBeanFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/onepiece/xmz/types/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+25-05-05.18:19:30.522 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+25-05-05.18:19:30.578 [main            ] ERROR SpringApplication      - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'DCCValueBeanFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes\com\onepiece\xmz\types\config\DCCValueBeanFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/onepiece/xmz/types/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:745)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:420)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/onepiece/xmz/types/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 45 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 59 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:229)
+	at org.redisson.connection.MasterSlaveConnectionManager.connect(MasterSlaveConnectionManager.java:196)
+	at org.redisson.config.ConfigSupport.createConnectionManager(ConfigSupport.java:220)
+	at org.redisson.Redisson.<init>(Redisson.java:71)
+	at org.redisson.Redisson.create(Redisson.java:116)
+	at com.onepiece.xmz.types.config.RedisClientConfig.redissonClient(RedisClientConfig.java:51)
+	at com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5.CGLIB$redissonClient$0(<generated>)
+	at com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5$$FastClassBySpringCGLIB$$2249917.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5.redissonClient(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 60 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1928)
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:225)
+	... 75 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$1(ConnectionsHolder.java:183)
+	at java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:774)
+	at java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:750)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at org.redisson.connection.ConnectionsHolder.promiseFailure(ConnectionsHolder.java:218)
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$4(ConnectionsHolder.java:204)
+	at java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:774)
+	at java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:750)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at org.redisson.client.RedisClient$1$1.run(RedisClient.java:299)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.CompletionException: org.redisson.client.RedisException: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.. channel: [id: 0x062c7009, L:/192.168.31.31:61861 - R:47.117.163.255/47.117.163.255:16379] command: (PING), promise: java.util.concurrent.CompletableFuture@57e9a21c[Not completed, 2 dependents], params: []
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.biRelay(CompletableFuture.java:1300)
+	at java.util.concurrent.CompletableFuture$BiRelay.tryFire(CompletableFuture.java:1284)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at org.redisson.client.protocol.CommandData.tryFailure(CommandData.java:87)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:411)
+	at org.redisson.client.handler.CommandDecoder.decodeCommand(CommandDecoder.java:216)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:144)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:120)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:519)
+	at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:366)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:280)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	... 4 common frames omitted
+Caused by: org.redisson.client.RedisException: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.. channel: [id: 0x062c7009, L:/192.168.31.31:61861 - R:47.117.163.255/47.117.163.255:16379] command: (PING), promise: java.util.concurrent.CompletableFuture@57e9a21c[Not completed, 2 dependents], params: []
+	... 23 common frames omitted
+25-05-05.18:19:30.582 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@d35dea7] to prepare test instance [com.onepiece.xmz.test.trigger.MarketTradeControllerTest@64b70f41]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'DCCValueBeanFactory' defined in file [D:\xmz\onepiece-backend\onepiece\onepiece-app\target\classes\com\onepiece\xmz\types\config\DCCValueBeanFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/onepiece/xmz/types/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:745)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:420)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/onepiece/xmz/types/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 45 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 59 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:229)
+	at org.redisson.connection.MasterSlaveConnectionManager.connect(MasterSlaveConnectionManager.java:196)
+	at org.redisson.config.ConfigSupport.createConnectionManager(ConfigSupport.java:220)
+	at org.redisson.Redisson.<init>(Redisson.java:71)
+	at org.redisson.Redisson.create(Redisson.java:116)
+	at com.onepiece.xmz.types.config.RedisClientConfig.redissonClient(RedisClientConfig.java:51)
+	at com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5.CGLIB$redissonClient$0(<generated>)
+	at com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5$$FastClassBySpringCGLIB$$2249917.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5.redissonClient(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 60 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1928)
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:225)
+	... 75 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 47.117.163.255/47.117.163.255:16379
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$1(ConnectionsHolder.java:183)
+	at java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:774)
+	at java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:750)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at org.redisson.connection.ConnectionsHolder.promiseFailure(ConnectionsHolder.java:218)
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$4(ConnectionsHolder.java:204)
+	at java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:774)
+	at java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:750)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at org.redisson.client.RedisClient$1$1.run(RedisClient.java:299)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.CompletionException: org.redisson.client.RedisException: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.. channel: [id: 0x062c7009, L:/192.168.31.31:61861 - R:47.117.163.255/47.117.163.255:16379] command: (PING), promise: java.util.concurrent.CompletableFuture@57e9a21c[Not completed, 2 dependents], params: []
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.biRelay(CompletableFuture.java:1300)
+	at java.util.concurrent.CompletableFuture$BiRelay.tryFire(CompletableFuture.java:1284)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at org.redisson.client.protocol.CommandData.tryFailure(CommandData.java:87)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:411)
+	at org.redisson.client.handler.CommandDecoder.decodeCommand(CommandDecoder.java:216)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:144)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:120)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:519)
+	at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:366)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:280)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	... 4 common frames omitted
+Caused by: org.redisson.client.RedisException: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.. channel: [id: 0x062c7009, L:/192.168.31.31:61861 - R:47.117.163.255/47.117.163.255:16379] command: (PING), promise: java.util.concurrent.CompletableFuture@57e9a21c[Not completed, 2 dependents], params: []
+	... 23 common frames omitted
+25-05-05.18:21:00.175 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 13880 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:21:00.176 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-05-05.18:21:01.953 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:21:01.962 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:21:02.049 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 0 Redis repository interfaces.
+25-05-05.18:21:02.708 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:21:03.310 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:21:03.948 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:21:05.284 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:21:05.411 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:21:05.491 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:21:10.922 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:21:11.151 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 11.68 seconds (JVM running for 13.238)
+25-05-05.18:21:12.337 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"926060095653","source":"s01","userId":"xfg01"}
+25-05-05.18:21:12.338 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xfg01 outTradeNo:926060095653
+25-05-05.18:21:12.395 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:21:12.395 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:21:13.528 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:21:13.960 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:21:13.960 [main            ] INFO  SwitchRoot             - 拼团商品查询试算服务-SwitchNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:21:14.060 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-05-05.18:21:14.061 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:21:14.061 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算:0
+25-05-05.18:21:14.077 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:21:14.082 [main            ] INFO  TradeOrderService      - 拼团交易-锁定营销优惠支付订单:xfg01 activityId:100123 goodsId:9890001
+25-05-05.18:21:14.084 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg01 activityId:100123
+25-05-05.18:21:14.102 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg01 activityId:100123
+25-05-05.18:21:14.123 [main            ] INFO  UserTakeLimitRuleFilter - 用户参与次数校验，已达可参与上限 activityId:100123
+25-05-05.18:21:14.127 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"926060095653","source":"s01","userId":"xfg01"}
+com.onepiece.xmz.types.exception.AppException: null
+	at com.onepiece.xmz.types.domain.trade.service.lock.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:38)
+	at com.onepiece.xmz.types.domain.trade.service.lock.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:20)
+	at com.onepiece.xmz.types.design.framework.link.model2.chain.BusinessLinkedList.apply(BusinessLinkedList.java:20)
+	at com.onepiece.xmz.types.domain.trade.service.lock.TradeOrderService.lockMarketPayOrder(TradeOrderService.java:47)
+	at com.onepiece.xmz.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:106)
+	at com.onepiece.xmz.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-05-05.18:21:14.133 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"926060095653","source":"s01","userId":"xfg01"} res:{"code":"E0103","info":"当前用户参与此拼团次数已达上限"}
+25-05-05.18:21:14.157 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:21:14.209 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:23:03.234 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 36900 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:23:03.235 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+25-05-05.18:23:04.819 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:23:04.825 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:23:04.894 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
+25-05-05.18:23:05.470 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$63cacbab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:23:05.967 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:23:06.513 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:23:07.750 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:23:07.862 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:23:07.944 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:23:12.952 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:23:13.076 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 10.609 seconds (JVM running for 11.947)
+25-05-05.18:23:13.568 [main            ] INFO  TagService             - 人群标签批次任务 tagId:RQ_KJHKL98UU78H66554GFDV batchId:10001
+25-05-05.18:23:13.625 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:23:13.625 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:23:14.489 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:23:14.843 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:23:14.883 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:23:29.623 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 24892 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:23:29.625 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-05-05.18:23:31.419 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:23:31.428 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:23:31.530 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 0 Redis repository interfaces.
+25-05-05.18:23:32.183 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$fc62833d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:23:32.683 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:23:33.240 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:23:34.558 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:23:34.675 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:23:34.774 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:23:39.377 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:23:39.494 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 10.758 seconds (JVM running for 12.613)
+25-05-05.18:23:40.006 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"135436728144","source":"s01","userId":"xfg01"}
+25-05-05.18:23:40.006 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xfg01 outTradeNo:135436728144
+25-05-05.18:23:40.062 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:23:40.062 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:23:40.916 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:23:41.237 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:23:41.237 [main            ] INFO  SwitchRoot             - 拼团商品查询试算服务-SwitchNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:23:41.293 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-05-05.18:23:41.293 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:23:41.294 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算:0
+25-05-05.18:23:41.306 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:23:41.310 [main            ] INFO  TradeOrderService      - 拼团交易-锁定营销优惠支付订单:xfg01 activityId:100123 goodsId:9890001
+25-05-05.18:23:41.311 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg01 activityId:100123
+25-05-05.18:23:41.329 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg01 activityId:100123
+25-05-05.18:23:41.343 [main            ] INFO  UserTakeLimitRuleFilter - 用户参与次数校验，已达可参与上限 activityId:100123
+25-05-05.18:23:41.348 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"135436728144","source":"s01","userId":"xfg01"}
+com.onepiece.xmz.types.exception.AppException: null
+	at com.onepiece.xmz.types.domain.trade.service.lock.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:38)
+	at com.onepiece.xmz.types.domain.trade.service.lock.filter.UserTakeLimitRuleFilter.apply(UserTakeLimitRuleFilter.java:20)
+	at com.onepiece.xmz.types.design.framework.link.model2.chain.BusinessLinkedList.apply(BusinessLinkedList.java:20)
+	at com.onepiece.xmz.types.domain.trade.service.lock.TradeOrderService.lockMarketPayOrder(TradeOrderService.java:47)
+	at com.onepiece.xmz.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:106)
+	at com.onepiece.xmz.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-05-05.18:23:41.352 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"135436728144","source":"s01","userId":"xfg01"} res:{"code":"E0103","info":"当前用户参与此拼团次数已达上限"}
+25-05-05.18:23:41.381 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:23:41.575 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:24:30.176 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 24172 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:24:30.178 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-05-05.18:24:32.110 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:24:32.119 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:24:32.201 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 0 Redis repository interfaces.
+25-05-05.18:24:32.917 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$f9e2457a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:24:33.513 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:24:34.266 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:24:35.659 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:24:35.771 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:24:35.910 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:24:40.731 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:24:40.858 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 11.595 seconds (JVM running for 13.376)
+25-05-05.18:24:41.367 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"631238348623","source":"s01","userId":"xfg01"}
+25-05-05.18:24:41.368 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xfg01 outTradeNo:631238348623
+25-05-05.18:24:41.410 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:24:41.410 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:24:42.259 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:24:42.587 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:24:42.587 [main            ] INFO  SwitchRoot             - 拼团商品查询试算服务-SwitchNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:24:42.657 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-05-05.18:24:42.657 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:24:42.657 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算:0
+25-05-05.18:24:42.669 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-05-05.18:24:42.674 [main            ] INFO  TradeOrderService      - 拼团交易-锁定营销优惠支付订单:xfg01 activityId:100123 goodsId:9890001
+25-05-05.18:24:42.675 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg01 activityId:100123
+25-05-05.18:24:42.690 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg01 activityId:100123
+25-05-05.18:24:42.823 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xfg01 marketPayOrderEntity:{"deductionPrice":10.00,"orderId":"453516316522","teamId":"40359095","tradeOrderStatusEnumVO":"CREATE"}
+25-05-05.18:24:42.837 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"631238348623","source":"s01","userId":"xfg01"} res:{"code":"0000","data":{"deductionPrice":10.00,"orderId":"453516316522","tradeOrderStatus":0},"info":"成功"}
+25-05-05.18:24:42.868 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:24:42.967 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:25:12.562 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 31764 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:25:12.563 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-05-05.18:25:14.421 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:25:14.427 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:25:14.506 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 0 Redis repository interfaces.
+25-05-05.18:25:15.193 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:25:15.801 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:25:16.443 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:25:17.857 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:25:17.964 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:25:18.044 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:25:22.891 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:25:23.013 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 11.404 seconds (JVM running for 13.378)
+25-05-05.18:25:23.570 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg02 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"473798360959","source":"s01","teamId":"40359095","userId":"xfg02"}
+25-05-05.18:25:23.571 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xfg02 outTradeNo:473798360959
+25-05-05.18:25:23.628 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:25:23.629 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:25:24.556 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:25:24.647 [main            ] INFO  TradeOrderService      - 拼团交易-查询拼单进度:40359095
+25-05-05.18:25:24.952 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg02 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg02"}
+25-05-05.18:25:24.952 [main            ] INFO  SwitchRoot             - 拼团商品查询试算服务-SwitchNode userId:xfg02 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg02"}
+25-05-05.18:25:25.012 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg02 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-05-05.18:25:25.012 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg02 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg02"}
+25-05-05.18:25:25.012 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算:0
+25-05-05.18:25:25.026 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xfg02 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg02"}
+25-05-05.18:25:25.030 [main            ] INFO  TradeOrderService      - 拼团交易-锁定营销优惠支付订单:xfg02 activityId:100123 goodsId:9890001
+25-05-05.18:25:25.032 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg02 activityId:100123
+25-05-05.18:25:25.048 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg02 activityId:100123
+25-05-05.18:25:25.174 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xfg02 marketPayOrderEntity:{"deductionPrice":10.00,"orderId":"692112651549","teamId":"40359095","tradeOrderStatusEnumVO":"CREATE"}
+25-05-05.18:25:25.185 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"473798360959","source":"s01","teamId":"40359095","userId":"xfg02"} res:{"code":"0000","data":{"deductionPrice":10.00,"orderId":"692112651549","tradeOrderStatus":0},"info":"成功"}
+25-05-05.18:25:25.215 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:25:25.291 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:26:05.052 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 6528 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:26:05.054 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-05-05.18:26:06.880 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:26:06.887 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:26:06.974 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 0 Redis repository interfaces.
+25-05-05.18:26:07.669 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$e9344fb2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:26:08.267 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:26:08.860 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:26:10.046 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:26:10.147 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:26:10.266 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:26:15.170 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:26:15.283 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 11.086 seconds (JVM running for 12.919)
+25-05-05.18:26:15.804 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg03 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"653156532731","source":"s01","teamId":"40359095","userId":"xfg03"}
+25-05-05.18:26:15.804 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xfg03 outTradeNo:653156532731
+25-05-05.18:26:15.856 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:26:15.857 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:26:16.726 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:26:16.788 [main            ] INFO  TradeOrderService      - 拼团交易-查询拼单进度:40359095
+25-05-05.18:26:17.080 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg03 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg03"}
+25-05-05.18:26:17.081 [main            ] INFO  SwitchRoot             - 拼团商品查询试算服务-SwitchNode userId:xfg03 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg03"}
+25-05-05.18:26:17.143 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg03 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-05-05.18:26:17.143 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg03 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg03"}
+25-05-05.18:26:17.143 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算:0
+25-05-05.18:26:17.158 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xfg03 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg03"}
+25-05-05.18:26:17.162 [main            ] INFO  TradeOrderService      - 拼团交易-锁定营销优惠支付订单:xfg03 activityId:100123 goodsId:9890001
+25-05-05.18:26:17.163 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg03 activityId:100123
+25-05-05.18:26:17.177 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg03 activityId:100123
+25-05-05.18:26:17.286 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xfg03 marketPayOrderEntity:{"deductionPrice":10.00,"orderId":"924563049688","teamId":"40359095","tradeOrderStatusEnumVO":"CREATE"}
+25-05-05.18:26:17.297 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"653156532731","source":"s01","teamId":"40359095","userId":"xfg03"} res:{"code":"0000","data":{"deductionPrice":10.00,"orderId":"924563049688","tradeOrderStatus":0},"info":"成功"}
+25-05-05.18:26:17.329 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:26:17.420 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:29:54.991 [main            ] INFO  TradeSettlementOrderServiceTest - Starting TradeSettlementOrderServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 25780 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:29:54.994 [main            ] INFO  TradeSettlementOrderServiceTest - The following 1 profile is active: "dev"
+25-05-05.18:29:56.762 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:29:56.770 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:29:56.855 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 0 Redis repository interfaces.
+25-05-05.18:29:57.547 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77ea67a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:29:58.156 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:29:58.742 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:29:59.969 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:30:00.086 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:30:00.153 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:30:04.943 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:30:05.065 [main            ] INFO  TradeSettlementOrderServiceTest - Started TradeSettlementOrderServiceTest in 10.963 seconds (JVM running for 12.75)
+25-05-05.18:30:05.477 [main            ] INFO  TradeSettlementOrderService - 拼团交易-支付订单结算:xfg01 outTradeNo:631238348623
+25-05-05.18:30:05.524 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:30:05.524 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:30:06.464 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:30:06.623 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:30:06.730 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:31:14.647 [main            ] INFO  TradeSettlementOrderServiceTest - Starting TradeSettlementOrderServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 11416 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:31:14.650 [main            ] INFO  TradeSettlementOrderServiceTest - The following 1 profile is active: "dev"
+25-05-05.18:31:16.679 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:31:16.685 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:31:16.767 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
+25-05-05.18:31:17.462 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$f9e2457a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:31:18.212 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:31:18.979 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:31:20.406 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:31:20.544 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:31:20.685 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:31:25.702 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:31:25.823 [main            ] INFO  TradeSettlementOrderServiceTest - Started TradeSettlementOrderServiceTest in 12.125 seconds (JVM running for 14.198)
+25-05-05.18:31:26.356 [main            ] INFO  TradeSettlementOrderService - 拼团交易-支付订单结算:xfg01 outTradeNo:631238348623
+25-05-05.18:31:26.411 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:31:26.412 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:31:27.524 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:31:27.838 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:31:27.920 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:33:20.631 [main            ] INFO  TradeSettlementOrderServiceTest - Starting TradeSettlementOrderServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 21300 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:33:20.634 [main            ] INFO  TradeSettlementOrderServiceTest - The following 1 profile is active: "dev"
+25-05-05.18:33:23.616 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:33:23.624 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:33:23.701 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 0 Redis repository interfaces.
+25-05-05.18:33:24.425 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$f9e2457a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:33:25.128 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:33:25.885 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:33:27.486 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:33:27.602 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:33:27.713 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:33:32.790 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:33:32.924 [main            ] INFO  TradeSettlementOrderServiceTest - Started TradeSettlementOrderServiceTest in 13.502 seconds (JVM running for 15.938)
+25-05-05.18:33:33.503 [main            ] INFO  TradeSettlementOrderService - 拼团交易-支付订单结算:xfg01 outTradeNo:631238348623
+25-05-05.18:33:33.566 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:33:33.567 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:33:34.657 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:33:35.274 [main            ] INFO  TradeSettlementOrderServiceTest - 请求参数:{"channel":"c01","outTradeNo":"631238348623","source":"s01","userId":"xfg01"}
+25-05-05.18:33:35.284 [main            ] INFO  TradeSettlementOrderServiceTest - 测试结果:{"activityId":100123,"channel":"c01","outTradeNo":"631238348623","source":"s01","teamId":"40359095","userId":"xfg01"}
+25-05-05.18:33:35.314 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:33:35.451 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:34:59.683 [main            ] INFO  TradeSettlementOrderServiceTest - Starting TradeSettlementOrderServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 37624 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:34:59.685 [main            ] INFO  TradeSettlementOrderServiceTest - The following 1 profile is active: "dev"
+25-05-05.18:35:01.428 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:35:01.435 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:35:01.511 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
+25-05-05.18:35:02.131 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$811395e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:35:02.650 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:35:03.182 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:35:04.414 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:35:04.523 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:35:04.632 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:35:09.329 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:35:09.438 [main            ] INFO  TradeSettlementOrderServiceTest - Started TradeSettlementOrderServiceTest in 10.491 seconds (JVM running for 12.261)
+25-05-05.18:35:09.851 [main            ] INFO  TradeSettlementOrderService - 拼团交易-支付订单结算:xfg02 outTradeNo:473798360959
+25-05-05.18:35:09.894 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:35:09.895 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:35:10.880 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:35:11.311 [main            ] INFO  TradeSettlementOrderServiceTest - 请求参数:{"channel":"c01","outTradeNo":"473798360959","source":"s01","userId":"xfg02"}
+25-05-05.18:35:11.320 [main            ] INFO  TradeSettlementOrderServiceTest - 测试结果:{"activityId":100123,"channel":"c01","outTradeNo":"473798360959","source":"s01","teamId":"40359095","userId":"xfg02"}
+25-05-05.18:35:11.347 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:35:11.399 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-05-05.18:35:40.945 [main            ] INFO  TradeSettlementOrderServiceTest - Starting TradeSettlementOrderServiceTest using Java 1.8.0_411 on DESKTOP-BPOGC9G with PID 18680 (started by Administrator in D:\xmz\onepiece-backend\onepiece\onepiece-app)
+25-05-05.18:35:40.948 [main            ] INFO  TradeSettlementOrderServiceTest - The following 1 profile is active: "dev"
+25-05-05.18:35:43.405 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-05-05.18:35:43.415 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-05-05.18:35:43.516 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67 ms. Found 0 Redis repository interfaces.
+25-05-05.18:35:44.367 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.onepiece.xmz.types.config.RedisClientConfig$$EnhancerBySpringCGLIB$$f9e2457a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:35:44.983 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.onepiece.xmz.types.config.RedisClientConfigProperties' of type [com.onepiece.xmz.types.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:35:45.659 [main            ] INFO  Version                - Redisson 3.26.0
+25-05-05.18:35:46.896 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:35:46.996 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 47.117.163.255/47.117.163.255:16379
+25-05-05.18:35:47.103 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-05-05.18:35:51.849 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-05-05.18:35:51.963 [main            ] INFO  TradeSettlementOrderServiceTest - Started TradeSettlementOrderServiceTest in 12.267 seconds (JVM running for 14.354)
+25-05-05.18:35:52.455 [main            ] INFO  TradeSettlementOrderService - 拼团交易-支付订单结算:xfg03 outTradeNo:653156532731
+25-05-05.18:35:52.503 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.18:35:52.503 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-05-05.18:35:53.529 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-05-05.18:35:54.171 [main            ] INFO  TradeSettlementOrderServiceTest - 请求参数:{"channel":"c01","outTradeNo":"653156532731","source":"s01","userId":"xfg03"}
+25-05-05.18:35:54.184 [main            ] INFO  TradeSettlementOrderServiceTest - 测试结果:{"activityId":100123,"channel":"c01","outTradeNo":"653156532731","source":"s01","teamId":"40359095","userId":"xfg03"}
+25-05-05.18:35:54.207 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-05-05.18:35:54.288 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

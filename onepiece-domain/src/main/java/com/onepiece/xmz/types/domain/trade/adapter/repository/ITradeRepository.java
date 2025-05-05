@@ -2,7 +2,9 @@ package com.onepiece.xmz.types.domain.trade.adapter.repository;
 
 
 import com.onepiece.xmz.types.domain.trade.model.aggregate.GroupBuyOrderAggregate;
+import com.onepiece.xmz.types.domain.trade.model.aggregate.GroupBuyTeamSettlementAggregate;
 import com.onepiece.xmz.types.domain.trade.model.entity.GroupBuyActivityEntity;
+import com.onepiece.xmz.types.domain.trade.model.entity.GroupBuyTeamEntity;
 import com.onepiece.xmz.types.domain.trade.model.entity.MarketPayOrderEntity;
 import com.onepiece.xmz.types.domain.trade.model.valobj.GroupBuyProgressVO;
 
@@ -21,6 +23,11 @@ public interface ITradeRepository {
     GroupBuyActivityEntity queryGroupBuyActivityEntityByActivityId(Long activityId);
 
     Integer queryOrderCountByActivityId(Long activityId, String userId);
+
+    GroupBuyTeamEntity queryGroupBuyTeamByTeamId(String teamId);
+
+    void settlementMarketPayOrder(GroupBuyTeamSettlementAggregate groupBuyTeamSettlementAggregate);
+
 
 
 }

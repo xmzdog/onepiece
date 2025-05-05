@@ -1,4 +1,4 @@
-package com.onepiece.xmz.types.domain.trade.service;
+package com.onepiece.xmz.types.domain.trade.service.lock;
 
 
 import com.onepiece.xmz.types.design.framework.link.model2.chain.BusinessLinkedList;
@@ -6,7 +6,8 @@ import com.onepiece.xmz.types.domain.trade.adapter.repository.ITradeRepository;
 import com.onepiece.xmz.types.domain.trade.model.aggregate.GroupBuyOrderAggregate;
 import com.onepiece.xmz.types.domain.trade.model.entity.*;
 import com.onepiece.xmz.types.domain.trade.model.valobj.GroupBuyProgressVO;
-import com.onepiece.xmz.types.domain.trade.service.factory.TradeRuleFilterFactory;
+import com.onepiece.xmz.types.domain.trade.service.ITradeLockOrderService;
+import com.onepiece.xmz.types.domain.trade.service.lock.factory.TradeRuleFilterFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ import javax.annotation.Resource;
  */
 @Slf4j
 @Service
-public class TradeOrderService implements ITradeOrderService {
+public class TradeOrderService implements ITradeLockOrderService {
 
     @Resource
     private ITradeRepository repository;
