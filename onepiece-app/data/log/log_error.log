@@ -467,3 +467,8 @@ com.onepiece.xmz.types.exception.AppException: null
 25-05-05.18:33:33.566 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
 25-05-05.18:35:09.894 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
 25-05-05.18:35:52.503 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.21:46:24.694 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.21:47:51.668 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.21:47:52.702 [main            ] ERROR OutTradeNoRuleFilter   - 不存在的外部交易单号或用户已退单，不需要做支付订单结算:xfg01 outTradeNo:21224516
+25-05-05.21:48:41.848 [main            ] WARN  HikariConfig           - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+25-05-05.21:49:19.704 [main            ] ERROR SCRuleFilter           - s02c02 渠道黑名单拦截

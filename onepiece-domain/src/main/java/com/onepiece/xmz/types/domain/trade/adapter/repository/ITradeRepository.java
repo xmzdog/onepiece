@@ -28,6 +28,8 @@ public interface ITradeRepository {
 
     void settlementMarketPayOrder(GroupBuyTeamSettlementAggregate groupBuyTeamSettlementAggregate);
 
+    boolean isSCBlackIntercept(String source, String channel);
+
 
 
 }

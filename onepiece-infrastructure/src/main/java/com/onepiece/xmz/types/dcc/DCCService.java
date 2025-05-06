@@ -1,7 +1,11 @@
 package com.onepiece.xmz.types.dcc;
 
 import com.onepiece.xmz.types.annotations.DCCValue;
+import com.onepiece.xmz.types.common.Constants;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,6 +30,10 @@ public class DCCService {
     @DCCValue("cutRange:100")
     private String cutRange;
 
+    @DCCValue("scBlacklist:s02c02")
+    private String scBlacklist;
+
+
     public boolean isDowngradeSwitch() {
         return "1".equals(downgradeSwitch);
     }
@@ -41,4 +49,14 @@ public class DCCService {
 
         return lastTwoDigits <= Integer.parseInt(cutRange);
     }
+
+
+    /**
+     * 判断黑名单拦截渠道，true 拦截、false 放行
+     */
+    public boolean isSCBlackIntercept(String source, String channel) {
+        List<String> list = Arrays.asList(scBlacklist.split(Constants.SPLIT));
+        return list.contains(source + channel);
+    }
+
 }
