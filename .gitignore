@@ -34,6 +34,7 @@ build/
 .vscode/
 /data/
 /onepiece-app/data/
-/onepiece-app/data/
+onepiece-app/data/
 */data/
-/onepiece-app/data/log/
+onepiece-app/data/log/
+data/log/
